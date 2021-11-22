@@ -1,0 +1,69 @@
+@mixin transform($v, $d1, $d2 : null) {
+	@if $v == translateX {
+		@include translateX($d1);
+	}@else if $v == rotate {
+		@include rotate($d1);
+	}@else if $v == translateY {
+		@include translateY($d1);
+	}@else if $v == translate {
+		@include translate($d1, $d2);
+	}
+} 
+@mixin translate($v1, $v2) {
+	transform: translate($v1, $v2);
+	-webkit-transform: translate($v1, $v2);
+}
+@mixin translateX($v1) {
+	transform: translateX($v1);
+	-webkit-transform: translateX($v1);
+}
+@mixin translateY($v1) {
+	transform: translateY($v1);
+	-webkit-transform: translateY($v1);
+}
+@mixin rotate($v1) {
+	transform: rotate($v1);
+	-webkit-transform: rotate($v1);
+}
+@mixin transition-duration($v1) {
+	-webkit-transition-duration: $v1;
+	transition-duration: $v1;
+}
+@mixin dimension($h : null, $w : null) {
+	@if $h != null {
+		height: $h;
+	}
+	@if $w != null {
+		width: $w;
+	}
+}
+@mixin dimensionMax($h : null, $w : null) {
+	@if $h != null {
+		max-height: $h;
+	}
+	@if $w != null {
+		max-width: $w;
+	}
+}
+@mixin dimensionMin($h : null, $w : null) {
+	@if $h != null {
+		min-height: $h;
+	}
+	@if $w != null {
+		min-width: $w;
+	}
+}
+@mixin directionPos($t : null, $r : null, $b : null, $l : null) {
+	@if $t != null {
+		top: $t;
+	}
+	@if $r != null {
+		right: $r;
+	}
+	@if $b != null {
+		bottom: $b;
+	}
+	@if $l != null {
+		left: $l;
+	}
+}

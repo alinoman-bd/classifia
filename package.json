@@ -1,0 +1,19 @@
+{
+  "name": "company",
+  "version": "1.0.0",
+  "description": "starter project for new projects",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass assets/scss/custom.scss assets/css/custom.css"
+  },
+  "author": "kevin powell",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

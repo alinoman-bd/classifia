@@ -1,0 +1,20 @@
+.ml-20{
+	margin-left: 20px;
+}
+.mt-20{
+	margin-top: 20px !important;
+}
+.close-modal{
+	position: absolute;
+	bottom: 29px;
+}
+.submit-modal-upadte{
+	position: relative;
+	right: -20.6em;
+	bottom: 0px;
+}
+.message-area{
+	height: 550px !important;
+	overflow-y: scroll;
+	padding-bottom: 30px;
+}

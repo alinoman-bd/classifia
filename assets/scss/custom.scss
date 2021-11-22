@@ -1,0 +1,2840 @@
+@import 'base/_main';
+body {
+	background-color:  map-get($theme-colors, "color_2");
+	color:  map-get($theme-colors, "color_6");
+	font-family: $font_family_1;
+	font-size: 15px;
+	font-weight: 300; 
+}
+a {
+	color:  map-get($theme-colors, "color_6"); 
+}
+a {
+	&:hover {
+		text-decoration: none;
+		color:  map-get($theme-colors, "color_6");
+	}
+}
+.btn {
+	&:focus {
+		box-shadow: none;
+	}  
+}
+.form-control {
+	@include dimension(50px);
+	&:focus {
+		box-shadow: none;
+		border-color:  map-get($theme-colors, "color_10");
+	}  
+}
+input {
+	&:focus {
+		box-shadow: none;
+		border-color:  map-get($theme-colors, "color_10");
+	}  
+}
+.pad-0 {
+	padding: 0;
+}
+.mar-0 {
+	margin: 0 !important;
+}
+.pad-l-0 {
+	padding-left: 0;
+}
+.pad-r-0 {
+	padding-right: 0;
+}
+.pad-b-15 {
+	padding-bottom: 15px;
+}
+.mar-b-15 {
+	margin-bottom: 15px;
+}
+.pad-l-10 {
+	padding-left: 10px !important;
+}
+.pad-r-10 {
+	padding-right: 10px !important;
+}
+.cover {
+	@include dimension(100%, 100%);
+	object-fit: cover;
+}
+.hw-100 {
+	@include dimension(100%, 100%);
+}
+.h-100 {
+	@include dimension(100%);
+}
+.w-100 {
+	@include dimension(null, 100%);
+}
+.br-r-none {
+	border-right: none;
+}
+
+.ctm-select {
+	position: relative;
+	background: map-get($theme-colors, "color_2");
+	border-radius: 5px;
+	.ctm-select-txt {
+		@include dimension(null, 100%);
+		padding: 13px 30px 13px 30px;
+		cursor: pointer;
+		border: 1px solid map-get($theme-colors, "color_8");
+		border-radius: 5px;
+		.select-txt {
+			padding-left: 5px;
+			display: inherit;
+			@include dimension(null, 100%);
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	}
+	.select-arr {
+		position: absolute;
+		@include directionPos(12px,5px);
+		img {
+			@include dimension(null, 25px);
+		}
+	}
+	.select-icon {
+		position: absolute;
+		@include directionPos(12px,null,null,12px);
+		img {
+			@include dimension(null, 13px);
+		}
+	}
+	.ctm-option-box {
+		position: absolute;
+		display: none;
+		@include dimension(null, 100%);
+		background: map-get($theme-colors, "color_2");
+		border: 1px solid map-get($theme-colors, "color_8");
+		@include directionPos(60px,null,null,0);
+		z-index: 9;
+		border-radius: 5px;
+		.ctm-option {
+			padding: 10px;
+			border-bottom: 1px solid map-get($theme-colors, "color_8");
+			cursor: pointer;
+			text-transform: capitalize;
+			&:last-child {
+				border: none;
+			}
+			&:hover {
+				background: map-get($theme-colors, "color_7");
+			}
+		}
+	}
+}
+.header-section {
+	padding: 0px 100px;
+	.main-menu {
+		background:  map-get($theme-colors, "color_2");
+		.navbar-brand {
+			margin: 10px 15px 10px 0;
+			img {
+				@include dimension(null,140px); 
+			}
+		}
+		.navbar {
+			.navbar-collapse {
+				justify-content: flex-end;
+				.navbar-nav {
+					.nav-link {
+						position: relative;
+						font-size: 16px;
+						color:  map-get($theme-colors, "color_6");
+						opacity: 1;
+						transition: .5s;
+						text-transform: capitalize;
+						padding: 10px;
+						margin-right: 10px;
+						white-space: nowrap;
+						&:after {
+							content: '';
+							position: absolute;
+							transition: .5s;
+							@include dimension(4px, 0);
+							background:  map-get($theme-colors, "color_5");
+							@include directionPos(null,null,-19px,0);
+						}
+						&:hover {
+							color:  map-get($theme-colors, "color_5");
+							&:after {
+								@include dimension(null, 100%);
+							}
+						}
+					}
+					.nav-link.active {
+						color:  map-get($theme-colors, "color_5");
+						&:after {
+							@include dimension(null, 100%);
+						}
+					}
+				}
+			}
+		}
+	}
+	.lg-ul {
+		margin: 0;
+		padding-left: 15px;
+		border-left: 1px solid map-get($theme-colors, "color_8");
+		.ctm-li {
+			list-style: none;
+			display: inline-block;
+			.ctm-li-a {
+				display: inline-block;
+				text-transform: capitalize;
+				padding: 6px 15px;
+				font-size: 16px;
+				margin-right: 10px;
+				border-radius: 5px;
+			}
+			.sign-up-a {
+				color:  map-get($theme-colors, "color_2");
+				background:  map-get($theme-colors, "color_5");	
+			}
+			.post-a {
+				color:  map-get($theme-colors, "color_2");
+				background:  map-get($theme-colors, "color_4");	
+			}
+		}
+	} 
+	.log-in-usr {
+		.ctm-li {
+			.ctm-li-a {
+				position: relative;
+				padding: 6px 0;
+				i {
+					color:  map-get($theme-colors, "color_9");
+					font-size: 18px;
+				}
+				.noti-n {
+					position: absolute;
+					color:  map-get($theme-colors, "color_2");
+					background:  map-get($theme-colors, "color_4");	
+					display: inline-block;
+					@include dimension(10px, 10px);
+					@include directionPos(null, 0);
+					font-size: 8px;
+					text-align: center;
+					border-radius: 50%;
+
+				}
+			}
+		}
+		.user-in {
+			display: flex;
+			align-items: center;
+			.user-img {
+				@include dimension(30px, 30px);
+				border-radius: 50%;
+				overflow: hidden;
+				margin-right: 5px;
+			}
+		}
+
+	}
+	.pos-ul {
+		margin-left: 10px;
+	}
+
+	.ctm-select {
+		background: map-get($theme-colors, "color_0");
+		.select-icon {
+			@include directionPos(3px);
+			img {
+				@include dimension(null, 18px);
+			}
+		}
+		.ctm-select-txt {
+			display: flex;
+			align-items: center;
+			@include dimension(30px);
+			padding: 0px 27px 0px 30px;
+			border: none;
+		}
+		.ctm-option-box {
+			@include directionPos(35px);
+			border-radius: 0;
+		}
+		.select-arr {
+			@include directionPos(2px);
+		}
+	}
+}
+.ss-section {
+	padding: 0px 85px 45px 100px;
+	background: map-get($theme-colors, "color_7");
+	border-bottom-right-radius: 100px;
+	background-image: url('../img/headerbg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.services {
+	.item-list {
+		text-align: center;
+		background: map-get($theme-colors, "color_2");
+		padding: 25% 0;
+		border: 1px solid map-get($theme-colors, "color_8");
+		margin-bottom: 15px;
+		border-radius: 5px;
+	}
+	.item-icon {
+		color: map-get($theme-colors, "color_5");
+		img {
+			@include dimension(null,60px); 
+		}
+	}
+	.item-txt {
+		font-size: 18px;
+		margin-top: 10px;
+		text-transform: capitalize;
+	}
+}
+.search {
+	padding: 20px 0 5px;
+	.search-btn {
+		button {
+			display: block;
+			@include dimension(50px, 100%);
+			background: map-get($theme-colors, "color_4");
+			color: map-get($theme-colors, "color_2");
+		}
+	}
+	.search-i {
+		border-left: none;
+	}
+	.input-group-text {
+		background: map-get($theme-colors, "color_2");
+		border-right: none;
+		padding-right: 0;
+		padding-left: 15px;
+	}
+}
+.country {
+	display: flex;
+	align-items: center;
+}
+.country img {
+	margin-right: 5px;
+	@include dimension(18px,25px);
+}
+.view-btn {
+	padding: 5px 10px;
+	background: map-get($theme-colors, "color_4");
+	color: map-get($theme-colors, "color_2");
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+	border: 1px solid map-get($theme-colors, "color_4");
+	&:hover {
+		background: map-get($theme-colors, "color_2");
+		color: map-get($theme-colors, "color_4");
+	}
+	i {
+		font-size: 12px;
+	}
+}
+.swiper-container {
+	@include dimension(100%,100%);
+}
+.swiper-slide {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.swiper-button-next, .swiper-button-prev {
+	background: unset;
+	outline: 0;
+}
+.section-tlt {
+	padding: 15px 0;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+	text-transform: capitalize;
+	i {
+		color: map-get($theme-colors, "color_4"); 
+		padding-right: 5px;
+	}
+	span {
+		color: map-get($theme-colors, "color_4");
+		padding-right: 5px; 
+	}
+	svg {
+		margin-right: 10px; 
+	}
+}
+.product-list {
+	background: map-get($theme-colors, "color_2"); 
+	position: relative;
+	overflow: hidden;
+	border-radius: 5px;
+	border: 1px solid map-get($theme-colors, "color_8");
+	@include dimension(null,100%);
+	.product {
+		.product-img-p {
+			position: relative;
+			padding-bottom: 65%;
+			overflow: hidden;
+			.product-img {
+				position: absolute;
+				@include directionPos(0,0,0,0);
+			}
+			.img-txt {
+				position: absolute;
+				@include directionPos(null,null,6px,6px);
+				color: map-get($theme-colors, "color_2");
+			}
+			.img-txt1 {
+				position: absolute;
+				@include directionPos(null,6px,6px);
+				color: map-get($theme-colors, "color_2");
+			}
+		}
+		.product-txt {
+			padding: 15px 10px 10px;
+			text-align: left;
+			.product-price {
+				color: map-get($theme-colors, "color_5"); 
+				padding-bottom: 3px;
+
+				.fav {
+					float: right;
+					color: map-get($theme-colors, "color_6"); 
+				}
+			}
+		}
+		.product-time {
+			padding-top: 15px;
+		}
+		.view-btn {
+			position: absolute;
+			@include directionPos(null,10px,10px);
+			background: map-get($theme-colors, "color_5");
+			border: 1px solid map-get($theme-colors, "color_5");
+			i {
+				font-size: 12px;
+			}
+			&:hover {
+				background: map-get($theme-colors, "color_2");
+				color: map-get($theme-colors, "color_5");
+			}
+		}
+	}
+}
+.ad {
+	@include dimension(215px);
+	background: map-get($theme-colors, "color_4");
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: map-get($theme-colors, "color_2");
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.product-wrapper {
+	padding: 30px 100px;
+	border-top-left-radius: 100px;
+	background: map-get($theme-colors, "color_7");
+	
+	.posted {
+		.product-list {
+			margin-bottom: 20px;
+		}
+		.all-view {
+			@include dimension(35px);
+			.view-btn {
+				float: right;
+				padding: 5px 15px;
+				i {
+					padding-right: 5px;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+	.home {
+		position: relative;
+		@include dimension(225px);
+		margin-bottom: 20px;
+		border-radius: 5px;
+		overflow: hidden;
+		.home-cnt {
+			position: absolute;
+			@include directionPos(null,null,22%,5%);
+			font-size: 30px;
+			color: map-get($theme-colors, "color_2");
+		}
+		.view-btn {
+			position: absolute;
+			@include directionPos(null,5%,22%);
+			i {
+				padding-right: 5px;
+			}
+		}
+	}
+	.home-slider {
+		border-radius: 5px;
+		overflow: hidden;
+		.home-slider-img {
+			@include dimension(320px);
+		}
+		.home-cnt {
+			position: absolute;
+			@include directionPos(null,null,5%,5%);
+			color: map-get($theme-colors, "color_2");
+			h3 {
+				margin-bottom: 0;
+			}
+			.h-phn-txt {
+				display: inline-flex;
+				align-items: center;
+				.h-phn-n {
+					font-size: 20px;
+					color: map-get($theme-colors, "color_5");
+				}
+				.h-phn-svg {
+					display: inline-flex;
+					font-size: 16px;
+					padding-left: 10px;
+					svg {
+						position: relative;
+						top: 3px;
+					}
+				}
+			}
+		}
+		.view-btn {
+			position: absolute;
+			@include directionPos(null,5%,12%);
+			padding: 5px 25px;
+			font-size: 16px;
+			z-index: 9;
+			i {
+				padding-right: 5px;
+			}
+		}
+	}
+	.carousel-control-next, .carousel-control-prev {
+		margin: auto;
+		@include dimension(30px,30px);
+		opacity: 1;
+
+	}
+	.carousel-control-prev {
+		left: 15px;
+	}
+	.carousel-control-next {
+		right: 15px;
+	}
+}
+.slider-section {
+	background: map-get($theme-colors, "color_2");
+	padding: 20px 100px 50px;
+	.product-list {
+		border: 1px solid map-get($theme-colors, "color_4");
+		.product {
+			.product-txt {
+				.product-price {
+					color: map-get($theme-colors, "color_4"); 
+				}
+			}
+			.view-btn {
+				position: absolute;
+				@include directionPos(null,10px,10px);
+				background: map-get($theme-colors, "color_4");
+				border: 1px solid map-get($theme-colors, "color_4");
+
+				&:hover {
+					background: map-get($theme-colors, "color_2");
+					color: map-get($theme-colors, "color_4");
+				}
+			}
+		}
+	}
+	.swiper-button-next {
+		right: -55px;
+	}
+	.swiper-button-prev {
+		left: -61px;
+	}
+}
+.footer-section {
+	padding: 60px 100px 15px;
+	background: map-get($theme-colors, "color_3");
+	color: map-get($theme-colors, "color_2");
+	.footer-logo {
+		img {
+			@include dimension(null,140px); 
+		}
+	}
+	.footer-txt {
+		padding: 10px 30px 0 0;
+	}
+	.footer-menu {
+		.menu-txt {
+			font-size: 25px;
+			padding-bottom: 10px;
+			text-transform: capitalize;
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			li {
+				list-style: none; 
+				padding-bottom: 5px;
+				a {
+					color: map-get($theme-colors, "color_2");
+					text-transform: capitalize;
+					&:hover {
+						color: map-get($theme-colors, "color_5");
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+.realestate-map {
+	padding: 30px 85px 60px 100px;
+	.realestate-map-cnt  {
+		padding-left: 30px;
+	}
+	.back-list {
+		padding-bottom: 15px;
+		font-size: 18px;
+		a {
+			color: map-get($theme-colors, "color_4");
+			&:hover {
+				text-decoration: underline;
+			} 
+			i {
+				font-size: 16px;
+				padding-right: 4px;
+			}
+		}
+	}
+}
+
+.map-sidebar {
+	.m-side-list {
+		display: flex;
+		position: relative;
+		@include dimension(null,100%);
+		padding: 15px;
+		border: 1px solid map-get($theme-colors, "color_8");
+		border-radius: 5px;
+		.m-side-img {
+			@include dimension(null,30%);   
+			border-radius: 5px;
+			overflow: hidden;
+		}
+		.m-side-cnt {
+			@include dimension(null,70%);
+			position: relative;
+			padding-left: 10px;
+			.loc-name {
+				color: map-get($theme-colors, "color_9");
+			}
+			.house-name {
+				font-size: 18px;
+				color: map-get($theme-colors, "color_3");
+			}
+			.house-price-len {
+				font-size: 15px;
+				padding-top: 5px;
+				color: map-get($theme-colors, "color_9");
+				sup {
+					padding-left: 3px;
+				}
+				.h-price {
+					color: map-get($theme-colors, "color_5");
+					font-weight: 600;
+				}
+				.h-len {
+					padding-left: 15px;
+				}
+			}
+		}
+		&:hover {
+			border-color: map-get($theme-colors, "color_11");
+		}
+	}
+}
+.realestate-search-s {
+	.realestate-map-cnt {
+		padding-left: 0;
+	}
+}
+
+.search-service {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.item-list {
+		text-align: center;
+		background: map-get($theme-colors, "color_2");
+		padding: 3% 0;
+		@include dimension(null,20%); 
+		border: 1px solid map-get($theme-colors, "color_5");
+		margin-bottom: 15px;
+		margin-right: 25px;
+		cursor: pointer;
+		border-radius: 5px;
+		&:first-child {
+			margin-left:10px;
+		}
+		.item-icon {
+			img {
+				@include dimension(null,25px); 
+			}
+			.item-h-img {
+				display: none;
+			}
+		}
+
+		&:hover {
+			background: map-get($theme-colors, "color_5");
+			.item-icon {
+				color: map-get($theme-colors, "color_2");
+				.item-h-img {
+					display: inline-block;
+				}
+				.item-img {
+					display: none;
+				}
+			}
+		} 
+	}
+	.item-list {
+		&.active {
+			background: map-get($theme-colors, "color_5");
+			.item-icon {
+				.item-h-img {
+					display: inline-block;
+				}
+				.item-img {
+					display: none;
+				}
+			}
+		}
+	}
+}
+.realestate-search {
+	padding: 30px 100px;
+	.search {
+		border-bottom: 1px solid map-get($theme-colors, "color_8");
+		.input-group-text {
+			color: map-get($theme-colors, "color_5");  
+		}
+	}
+	.search-i {
+		padding: 3% 10px;
+	}
+	.search-btn {
+		.btn {
+			margin-bottom: 15px;
+		}
+	}
+	.search-slct {
+		@include dimension(30px); 
+		margin: 15px 0;
+		.slct-itm {
+			float: right;
+			display: flex;
+			align-items: center;
+			span {
+				padding-left: 5px;
+			}
+			.ctm-select {
+				.ctm-select-txt {
+					padding: 5px 30px 5px 30px;
+				}
+				.select-arr {
+					position: absolute;
+					@include directionPos(19%);
+				}
+				.ctm-option-box {
+					@include directionPos(45px);
+				}
+			}
+		}
+	}
+
+	.map-sidebar {
+		padding: 0 15px;
+		.m-side-list {
+			.m-side-img {
+				@include dimension(null,25%); 
+			}
+			.m-side-cnt {
+				@include dimension(null,75%);
+				.h-len-txt1 {
+					margin-left: 5px;
+					padding: 0 10px;
+					position: relative;
+					&:after {
+						content:'';
+						position: absolute;
+						background: map-get($theme-colors, "color_9");
+						@include dimension(5px,5px);
+						border-radius: 50%;
+						top: 42%;
+						left: 0;
+					}
+				}
+				.star {
+					display: none;
+					color: map-get($theme-colors, "color_11");
+					padding-bottom: 5px;
+				}
+			}
+			.fav {
+				position: absolute;
+				@include directionPos(0px,0px);
+			}
+			&:hover {
+				border: 1px solid map-get($theme-colors, "color_11");
+				.house-price-len {
+					.h-price {
+						color: map-get($theme-colors, "color_11");
+					}
+				}
+			}
+			
+		}
+		.m-side-list.active {
+			border: 1px solid map-get($theme-colors, "color_11");
+			.house-price-len {
+				.h-price {
+					color: map-get($theme-colors, "color_11");
+				}
+			}
+			.star {
+				display: block;
+			}
+		}
+	}
+
+}
+.checkbox-ctm {
+	.ctm-con {
+		position: relative;
+		padding: 0 20px 15px 35px;
+		cursor: pointer;
+		font-size: 16px;
+		font-weight: 500;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	/* Hide the browser's default checkbox */
+	.ctm-con input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		@include dimension(0,0);
+	}
+
+	/* Create a custom checkbox */
+	.checkmark {
+		position: absolute;
+		@include directionPos(0,null,null,0);
+		@include dimension(25px,25px);
+		background-color: map-get($theme-colors, "color_8");
+	}
+	.checkmark:after {
+		content: "";
+		position: absolute;
+		display: none;
+	}
+
+	/* Show the checkmark when checked */
+	.ctm-con input:checked ~ .checkmark:after {
+		display: block;
+	}
+
+	/* Style the checkmark/indicator */
+	.ctm-con .checkmark:after {
+		@include directionPos(3px,null,null,9px);
+		@include dimension(15px,7px);
+		border: solid map-get($theme-colors, "color_4");
+		border-width: 0 2px 2px 0;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+}
+.realestate-search-sidebar {
+	padding: 25px 20px;
+	background:  map-get($theme-colors, "color_7");
+	border-radius: 5px;
+	.realestate-search-tlt {
+		font-size: 25px;
+		padding: 15px 0;
+	}
+	.quick-links {
+		.link {
+			padding-bottom: 3px;
+			a {
+				font-size: 16px;
+				font-weight: 500;
+				span {
+					color: map-get($theme-colors, "color_5");
+				}
+			}
+		}
+	}
+	.price-box {
+		padding-bottom: 15px;
+		border-bottom: 1px solid map-get($theme-colors, "color_8");
+	}
+	.rea-price {
+		.input-group-text {
+			background: map-get($theme-colors, "color_2");
+			color: map-get($theme-colors, "color_4");
+			border-right: none;
+			padding-right: 0;
+		}
+		input {
+			border-left: none;
+		}
+	}
+}
+.rea-ss-nav {
+	.search-service {
+		display: inherit;
+	}
+	.item-list-p {
+		/*@include dimension(null,20%);*/
+		/*margin: 0 7px;*/
+		.item-list {
+			position: relative;
+			padding: 25% 5px 25%;
+			@include dimension(null,100%); 
+			margin: 0;
+			.item-icon {
+				img {
+					@include dimension(40px,45px); 
+				}
+			}
+		}
+
+		.item-txt {
+			padding: 10px 0 15px;
+			font-size: 18px;
+			text-align: center;
+		}
+	}
+	.item-list-p.active {
+		.item-list {
+			background: map-get($theme-colors, "color_5"); 
+			.item-icon {
+				.item-h-img {
+					display: inline-block;
+				}
+				.item-img {
+					display: none;
+				}
+			}
+		}
+		.item-txt {
+			color: map-get($theme-colors, "color_5");
+		}
+	}
+	#myTabContent {
+		background: map-get($theme-colors, "color_2");
+		border: 1px solid map-get($theme-colors, "color_5");
+		border-top: none;
+		padding: 20px 0;
+	}
+	.nav-tabs {
+		border-color: map-get($theme-colors, "color_5");
+		.nav-link {
+			padding: 8px 40px;
+			border-color: map-get($theme-colors, "color_8") map-get($theme-colors, "color_8") map-get($theme-colors, "color_5") map-get($theme-colors, "color_8");
+		}
+		.nav-link.active {
+			border-color: map-get($theme-colors, "color_5") map-get($theme-colors, "color_5") map-get($theme-colors, "color_2") map-get($theme-colors, "color_5");
+		}
+	}
+	.extra-box {
+		display: none;
+	}
+	.line-sh {
+		&:after {
+			content:'';
+			position: absolute;
+			@include dimension(1px,90%);
+			background: map-get($theme-colors, "color_8");
+			@include directionPos(8px);
+		}
+	}
+	.sh-extra {
+		@include dimension(30px);
+		margin: 15px 0;
+		position: relative;
+		span {
+			float: right;
+			cursor: pointer;
+			i {
+				padding-left: 5px;
+				font-size: 14px;
+				color:  map-get($theme-colors, "color_5");
+			}
+		}
+		.hide {
+			display: none;
+		}
+	}
+}
+.rea-ss-section {
+	.realestate-search-sidebar {
+		padding: 15px 25px 25px;
+		background: map-get($theme-colors, "color_2");
+		border-radius: 5px;
+		height: calc(100% - 37px);
+		margin-top: 37px;
+		border: 1px solid  map-get($theme-colors, "color_8");
+	}
+}
+
+.search {
+	.rea-ss-nav {
+		.input-group-text {
+			color: map-get($theme-colors, "color_5");
+		}
+	}
+}
+.category-section {
+	padding: 50px 100px;
+	.services {
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+		border-bottom: 1px solid  map-get($theme-colors, "color_8");
+		.item-list {
+			.item-icon {
+				.item-h-img {
+					display: none;
+				}
+			}
+			&:hover {
+				background: map-get($theme-colors, "color_4");
+				border: 1px solid  map-get($theme-colors, "color_4");
+				.item-icon {
+					.item-h-img {
+						display: inline-block;
+					}
+					.item-img {
+						display: none;
+					}
+				}
+				.item-txt {
+					color: map-get($theme-colors, "color_2");	
+				}	
+			}
+		}
+		.item-list.active {
+			background: map-get($theme-colors, "color_4");
+			border: 1px solid  map-get($theme-colors, "color_4");
+			.item-icon {
+				.item-h-img {
+					display: inline-block;
+				}
+				.item-img {
+					display: none;
+				}
+			}
+			.item-txt {
+				color: map-get($theme-colors, "color_2");	
+			}
+		}
+	}
+	.category-menu {
+		margin-bottom: 50px;
+		.cat-ul {
+			.cat-li {
+				position: relative;
+				padding: 10px 15px;
+				font-size: 18px;
+				border-bottom: 2px solid map-get($theme-colors, "color_8");
+				text-transform: capitalize;
+				cursor: pointer;
+				img {
+					padding-right: 4px;
+					@include dimension(null,25px);
+				}
+				.cat-li-h-img {
+					display: none;
+				}
+				
+			}
+
+			.cat-li {
+				&:hover {
+					background: map-get($theme-colors, "color_4");
+					color: map-get($theme-colors, "color_2");
+					border-bottom: 2px solid map-get($theme-colors, "color_4");
+					.cat-li-h-img {
+						display: inline-block;
+					}
+					.cat-li-img {
+						display: none;
+					}
+				}
+			}
+			.cat-li.active {
+				background: map-get($theme-colors, "color_4");
+				color: map-get($theme-colors, "color_2");
+				border-bottom: 2px solid map-get($theme-colors, "color_4");
+				.cat-li-h-img {
+					display: inline-block;
+				}
+				.cat-li-img {
+					display: none;
+				}
+			}
+		}
+		.ctm-cat-ul {
+			border-right: 1px solid map-get($theme-colors, "color_8");
+			.cat-li {
+				&:after {
+					content: '';
+					@include dimension(0,0);
+					@include directionPos(30%,null,null,0);
+					position: absolute;
+					border-top: 10px solid transparent;
+					border-bottom: 10px solid transparent;
+					border-left: 10px solid map-get($theme-colors, "color_2");
+				}
+			}
+		}
+	}
+	.car-tab-cnt {
+		padding-left: 55px;
+		.rea-type-tlt {
+			font-size: 20px;
+		}
+	}
+	.buy-btn,.rent-btn {
+		border: 1px solid map-get($theme-colors, "color_4");
+		padding: 6px 45px;
+		font-size: 16px;
+	}
+	.buy-btn {
+		background: map-get($theme-colors, "color_4");
+		color: map-get($theme-colors, "color_2"); 
+		margin-right: 15px;
+	}
+	.rent-btn {
+		background: map-get($theme-colors, "color_2");
+		color: map-get($theme-colors, "color_4");
+	}
+}
+.category-form-section {
+	padding: 50px 100px;
+}
+.main-info  {
+	padding: 50px 0px 35px;
+
+	.section-tlt {
+		border-top: 1px solid map-get($theme-colors, "color_8");
+		padding: 25px 0;
+	}
+}
+.additional-info {
+	.hide, .extra {
+		position: absolute;
+		@include directionPos(null,0);
+
+		i {
+			background: map-get($theme-colors, "color_4"); 
+			padding: 5px;
+			border-radius: 5px;
+			color: map-get($theme-colors, "color_2"); 
+		}
+	}
+	.hide {
+		display: none;
+	}
+	.extra-box {
+		display: none;
+		.section-tlt {
+			border-top: 1px solid  map-get($theme-colors, "color_8"); 
+			padding: 25px 0;
+			margin-top: 25px;
+		}
+	}
+}
+.extra-info {
+	.section-tlt {
+		border-top: 1px solid map-get($theme-colors, "color_8");
+		padding: 25px 0;
+	}
+}
+.extra-info1 {
+	margin-bottom: 20px;
+	textarea {
+		@include dimension(300px);
+	}
+	.des-tips {
+		display: none;
+		@include dimension(100%,100%);
+		padding: 10%;
+		position: absolute;
+		border-radius: 5px;
+		background: map-get($theme-colors, "color_4"); 
+		color: map-get($theme-colors, "color_2");
+		.tips-tlt {
+			font-size: 20px;
+			font-weight: 600;
+			padding-bottom: 10px;
+		}
+		.tip {
+			.tip-tlt {
+				font-size: 18px;
+				margin: 10px 0 5px;
+				span {
+					background: map-get($theme-colors, "color_2");
+					color: map-get($theme-colors, "color_4");
+					@include dimension(25px,25px);
+					margin-right: 5px;
+					border-radius: 50%;
+					text-align: center;
+					display: inline-block;
+				}
+			}
+		}
+	}
+	.arrow-right {
+		@include dimension(0,0);
+		@include directionPos(42%,null,null,-19px);
+		position: absolute;
+		border-top: 20px solid transparent;
+		border-bottom: 20px solid transparent;
+		border-right: 20px solid map-get($theme-colors, "color_4");
+	}
+}
+
+.e-txt {
+	padding: 15px 25px;
+	background:  map-get($theme-colors, "color_7");
+	border-radius: 5px;
+	font-size: 18px;
+}
+.add-photo {
+	.section-tlt {
+		border-top: 1px solid  map-get($theme-colors, "color_8"); 
+		padding: 25px 0;
+	}
+	.ctm-file {
+		@include dimension(null,200px);
+		label {
+			padding: 50px 0;
+			background: map-get($theme-colors, "color_7"); 
+			display: table;
+			color:  map-get($theme-colors, "color_3"); 
+			@include dimension(null,100%);
+			text-align: center;
+			font-size: 20px;
+			border-radius: 10px;
+			margin-top: 30px;
+			cursor: pointer;
+		}
+		input[type="file"] {
+			display: none;
+		}
+	}
+}
+.extra-info2 {
+	.section-tlt {
+		border-bottom: 1px solid map-get($theme-colors, "color_8");
+		margin-bottom: 25px;
+	}
+	.row {
+		align-items: center;
+	}
+	.hin-txt {
+		padding-left: 10px;
+		color: map-get($theme-colors, "color_3");
+		font-weight: 600;
+	}
+	.reg-menu {
+		padding: 30px 0 20px;
+		margin-bottom: 20px;
+		font-size: 20px;
+		border-bottom: 1px solid map-get($theme-colors, "color_8");
+		.reg-li {
+			padding: 0 15px;
+			cursor: pointer;
+			font-weight: 600;
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				height: 8px;
+				width: 8px;
+				background: map-get($theme-colors, "color_8");
+				left: 0;
+				top: 9px;
+				border-radius: 50%;
+			}
+		}
+		.reg-li.active {
+			color: map-get($theme-colors, "color_4");
+			&:after {
+				background: map-get($theme-colors, "color_4");
+			}
+		}
+	}
+	.e-txt {
+		margin-bottom: 20px;
+		i {
+			color: map-get($theme-colors, "color_4");
+			font-size: 25px;
+			padding-right: 5px;
+		}
+	}
+	.privicy-txt {
+		a {
+			color:map-get($theme-colors, "color_5"); 
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.checkbox-ctm {
+		.ctm-con {
+			padding: 0 20px 0px 35px;
+		}
+	}
+	.log-p {
+		position: relative;
+		top: 7px;
+	}
+	.post-btn {
+		text-align: right;
+		.next-btn {
+			font-size: 16px;
+		}
+	}
+	.s-l-btn {
+		margin-bottom: 20px;
+		a {
+			color:map-get($theme-colors, "color_5"); 
+			text-decoration: underline;
+			font-size: 16px;
+		}	
+	}
+}
+.ctm-btn {
+	padding: 6px 30px;
+	font-size: 20px;
+	margin:  15px 0;
+}
+.next-btn {
+	background: map-get($theme-colors, "color_4");  
+	color: map-get($theme-colors, "color_2"); 
+
+}
+.step-ul {
+	float: left;
+	margin-top: 30px;
+	position: relative;
+	.step-li {
+		display: inline-block;
+		padding: 15px 30px;
+		border-radius: 5px;
+		background:  map-get($theme-colors, "color_2"); 
+		font-size: 25px;
+		color: map-get($theme-colors, "color_4");
+		margin-right: 80px;
+		float: left;
+		border: 2px solid  map-get($theme-colors, "color_4"); 
+	}
+	.step-li.active {
+		background:  map-get($theme-colors, "color_4"); 
+		color: map-get($theme-colors, "color_2");
+	}
+	.step-li:last-child {
+		margin-right: 0;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		background:  map-get($theme-colors, "color_4"); 
+		@include dimension(2px,100%);
+		@include directionPos(44%,null,null,0px);
+		z-index: -1;
+	}
+}
+.lg-modal {
+	.modal-dialog {
+		@include dimensionMax(null,400px); 
+	}
+	.search {
+		padding: 0 40px;
+		.input-group-append {
+			.input-group-text {
+				background: map-get($theme-colors, "color_2"); 
+				border-right: 1px solid  map-get($theme-colors, "color_10"); 
+				padding-right: 5px;
+				padding-left: 0;
+				border-left: 0;
+			}
+		}
+		.input-group-prepend {
+			.input-group-text {
+				color: map-get($theme-colors, "color_4"); 
+			}
+		}
+		.input-group-text {
+			font-size: 20px;
+			cursor: pointer;
+		}
+		.search-i {
+			padding: 10px;
+		}
+	}
+	.modal-header {
+		border: none;
+		font-size: 25px;
+		justify-content: center;
+	}
+	.modal-footer {
+		border: none;
+		padding: 0 40px 30px;
+	}
+	.close {
+		position: absolute;
+		@include directionPos(20px,20px);
+	}
+	.label-txt {
+		font-size: 16px;
+		span {
+			padding-left: 5px;
+			cursor: pointer;
+			color: map-get($theme-colors, "color_4"); 
+		}
+	}
+}
+.user-profile-section  {
+	padding: 30px 100px;
+	a {
+		display: block;
+	}
+	.m-side-list {
+		.m-side-img {
+			@include dimension(null,17%);
+		}
+		.m-side-cnt {
+			@include dimension(null,60%);
+			padding-right: 3%;
+			.setting {
+				padding: 20px 0 10px;
+				font-size: 14px;
+				span {
+					padding-right: 20px;
+					cursor: pointer;
+					i {
+						padding-right: 5px;
+					}
+				}
+				.s-txt1 {
+					color: map-get($theme-colors, "color_4"); 
+				}
+				.s-txt2 {
+					color: map-get($theme-colors, "color_11"); 
+				}
+			}	
+		}
+		.usr-p-atr {
+			@include dimension(null,23%);
+			display: flex;
+			align-items: center;
+			font-size: 15px;
+			text-transform: capitalize;
+			padding-left: 3%; 
+			border-left: 1px solid map-get($theme-colors, "color_8"); 
+			.atr-a-txt {
+				@include dimension(null,50%);
+			}
+			.atr-a-count {
+				@include dimension(null,50%);
+			}
+		}
+	}
+	.user-info {
+		background:  map-get($theme-colors, "color_7"); 
+		padding: 10%;
+		border-radius: 5px;
+		margin-right: 15px;
+		.user-in {
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+			border-bottom: 1px solid map-get($theme-colors, "color_8"); 
+			display: flex;
+			align-items: center;
+			.user-img {
+				@include dimension(50px,50px);
+				border-radius: 50%;
+				display: inline-block;
+				margin-right: 10px;
+				overflow: hidden;
+			}
+			.user-name {
+				font-size: 20px;
+				text-transform: capitalize;
+			}
+		}
+		.user-ul {
+			.my-post-li {
+				i {
+					color: map-get($theme-colors, "color_9"); 
+					font-size: 15px;
+				}
+			}
+			.user-li {
+				a {
+					font-size: 20px;
+					padding-bottom: 5px;
+					color: map-get($theme-colors, "color_3"); 
+					cursor: pointer;
+					font-weight: 800;
+					display: inline-block;
+					span {
+						color: map-get($theme-colors, "color_9"); 
+					}
+					&:hover {
+						color:  map-get($theme-colors, "color_4");
+						span {
+							color: map-get($theme-colors, "color_4"); 
+						}
+					}
+				}
+				.rotate-ar {
+					transform: rotate(180deg);
+				}
+			}
+			.user-s-ul {
+				display: none;
+				padding-bottom: 5px;
+				.user-s-li {
+					a {
+						font-weight: 800;
+						color: map-get($theme-colors, "color_9"); 
+					}
+				}
+			}
+			.user-li.active {
+				color:  map-get($theme-colors, "color_4"); 
+				a {
+					color:  map-get($theme-colors, "color_4"); 
+					span {
+						color: map-get($theme-colors, "color_4"); 
+					}
+				}
+			}
+		}
+	}
+}
+.select-panel-section {
+	padding: 60px 100px;
+	background:  map-get($theme-colors, "color_7"); 
+	.plane-all {
+		margin: 80px 0;
+		border: 1px solid  map-get($theme-colors, "color_8");
+		border-radius: 5px;
+		.plane {
+			background: map-get($theme-colors, "color_2");
+			padding: 20px;
+			.plane-itm {
+				display: flex;
+				justify-content: center;
+				position: relative;
+				@include directionPos(-37px); 
+				.plane-tlt {
+					position: relative;
+					padding: 6px 40px;
+					margin: 0 auto;
+					background: map-get($theme-colors, "color_12");
+					text-transform: uppercase;
+					color: map-get($theme-colors, "color_2");
+					border-radius: 5px;
+					&:after {
+						content:'';
+						position: absolute;
+						@include dimension(0,0); 
+						border-left: 20px solid transparent;
+						border-right: 20px solid transparent;
+						border-top: 20px solid map-get($theme-colors, "color_12");
+						@include directionPos(null,null,-14px,34%); 
+
+					}
+				}
+			}
+			.plane-txt {
+				font-size: 20px;
+				padding-bottom: 25px;
+				color: map-get($theme-colors, "color_3");
+			}
+			.plane-price-save {
+				font-size: 16px;
+				.save-txt {
+					display: inline-block;
+					background: map-get($theme-colors, "color_4");
+					border-radius: 3px;
+					padding: 3px 25px;
+					color: map-get($theme-colors, "color_2");
+					margin-left: 10px;
+				}
+				del {
+					color: map-get($theme-colors, "color_9");
+				}
+			}
+			.plane-cr-price {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 20px;
+				color: map-get($theme-colors, "color_9");
+				.cr-price {
+					font-size: 70px;
+					font-weight: bold;
+					color: map-get($theme-colors, "color_3");
+					padding: 0 5px;
+				}
+			}
+			.slct-btn {
+				background:  map-get($theme-colors, "color_12");
+				padding: 6px 35px;
+				color:  map-get($theme-colors, "color_2");
+				margin: 15px 0 25px;
+				.slct {
+					display: none;
+				}
+				svg {
+					position: relative;
+					@include directionPos(3px); 	
+				}
+			}
+			.select-txt {
+				display: none;
+				margin: 10px 0 22px;
+			}
+		}
+		.plane.selected {
+			position: absolute;
+			@include dimension(450px,100%);
+			@include directionPos(-55px); 
+			border: 5px solid map-get($theme-colors, "color_4");
+			border-radius: 5px;
+			.plane-itm {
+				.plane-tlt {
+					background: map-get($theme-colors, "color_4");
+					&:after {
+						border-top: 20px solid map-get($theme-colors, "color_4");
+
+					}
+				}
+			}
+			.slct-btn {
+				background:  map-get($theme-colors, "color_4");
+				.non-slct {
+					display: none;
+				}
+				.slct {
+					display: inline-block;
+				}
+			}
+			.select-txt {
+				display: block;
+			}
+		}
+	}
+	.adition-service {
+		padding-bottom: 40px;
+		.row {
+			align-items: center;
+		}
+		.service-list {
+			.s-list {
+				background: map-get($theme-colors, "color_2");
+				border: 1px solid map-get($theme-colors, "color_8");
+				padding: 10px 0;
+				border-radius: 5px;
+				margin-bottom: 15px;
+				.add-ser-txt {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: map-get($theme-colors, "color_3");
+					font-size: 20px;
+					svg {
+						margin-left: 5px;
+					}
+				}
+				.adition-price {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					.cr-price {
+						font-size: 25px;
+						font-weight: bold;
+					}
+				}
+				.ser-btn {
+					background:  map-get($theme-colors, "color_4");
+					padding: 6px 15px;
+					color:  map-get($theme-colors, "color_2");
+				}
+			}
+		}
+	}
+	.checkout {
+		.order {
+			background: map-get($theme-colors, "color_2");
+			padding: 30px;
+			border: 1px solid  map-get($theme-colors, "color_8");
+			border-radius: 5px;
+			.order-tlt {
+				font-size: 20px;
+				color:  map-get($theme-colors, "color_3");
+			}
+			.cr-price {
+				font-size: 16px;
+				font-weight: bold;
+			}
+			.order-list-all {
+				.order-list {
+					border-bottom: 1px solid  map-get($theme-colors, "color_8");
+					padding: 10px 0;
+					.order-price {
+						float: right;
+					}
+
+					&:last-child {
+						border-bottom: none;
+					}
+				}
+			}
+			.total-price {
+				text-align: right;
+				padding-top: 15px;
+			}
+		}
+		.payment {
+			.payment-tlt {
+				font-size: 20px;
+				padding-bottom: 25px;
+			}
+			.payment-option {
+				.pay-acc {
+					padding:20px;
+					border: 1px solid map-get($theme-colors, "color_8");
+					border-radius: 5px;
+					position: relative; 
+					@include dimension(125px);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					cursor: pointer;
+					.pay-slct {
+						position: absolute;
+						@include directionPos(10px,null,null,20px); 
+						display: none;
+					}
+					.pay-img {
+						img {
+							@include dimension(null,150px);
+						}
+					}
+					.slct-pay-img {
+						display: none;
+					}
+				}
+				.pay-acc.pay-selected {
+					border: 2px solid map-get($theme-colors, "color_4");
+					.pay-slct {
+						display: inline-block;
+					}
+					.slct-pay-img {
+						display: inline-block;
+					}
+					.non-pay-img {
+						display: none;
+					}
+
+				}
+			}
+
+			.next-step {
+				text-align: right;
+				padding-top: 25px;
+				.view-btn {
+					padding: 5px 25px;
+				}
+			}
+		}
+	}
+}
+.plane-modal {
+
+	.close {
+		position: absolute;
+		@include directionPos(10px,15px);
+		z-index: 1;
+	}
+	.modal-body {
+		padding: 0;
+		.suc-div {
+			display: flex;
+			position: relative;
+			background: map-get($theme-colors, "color_4");
+			align-items: center;
+			justify-content: center;
+			@include dimension(100%,100%);
+			.p-m-div1 {
+				text-align: center;
+				color: map-get($theme-colors, "color_2");
+				padding: 60px 0;
+				.suc-txt {
+					margin-top: 10px;
+				}
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				@include directionPos(42%,-19px);
+				border-top: 20px solid transparent;
+				border-bottom: 20px solid transparent;
+				border-left: 20px solid map-get($theme-colors, "color_4");
+			}
+		}
+		.modal-cnt {
+			padding: 50px 30px 30px;
+			.modal-tlt {
+				font-size: 20px;
+				padding-bottom: 15px;
+			}
+			.modal-txt {
+				padding-bottom: 20px;
+			}
+			.next-step {
+				text-align: right;
+				.view-btn {
+					padding: 5px 20px;
+				}
+			}
+		}
+	}
+}
+.car-result {
+	.search {
+		border-bottom: none;
+		padding: 0;
+	}
+	.search-slct {
+		margin-top: 0;
+	}
+	.map-sidebar {
+		.m-side-list {
+			.m-side-cnt {
+				.star {
+					color: map-get($theme-colors, "color_4");
+				}
+			}
+			&:hover {
+				border-color: map-get($theme-colors, "color_4");
+				.m-side-cnt {
+					.house-price-len {
+						.h-price {
+							color: map-get($theme-colors, "color_4");
+						}
+					}
+				}
+			}
+		}
+		.m-side-list.active {
+			border-color: map-get($theme-colors, "color_4");
+			.m-side-cnt {
+				.house-price-len {
+					.h-price {
+						color: map-get($theme-colors, "color_4");
+					}
+				}
+			}
+		}
+	}
+
+}
+.realestate-details {
+	padding: 80px 100px;
+	.address-d {
+		padding: 45px 50px;
+		background:  map-get($theme-colors, "color_2");
+		border-radius: 5px;
+		border: 1px solid map-get($theme-colors, "color_8");
+		.phn-num {
+			font-size: 30px;
+			font-weight: 800;
+			padding-bottom: 20px;
+			color: map-get($theme-colors, "color_4");
+			border-bottom: 1px solid map-get($theme-colors, "color_8");
+			margin-bottom: 30px;
+		}
+		.address-txt-a {
+			padding-bottom: 15px;
+			font-size: 18px;
+			.address-tlt {
+				color: map-get($theme-colors, "color_9");
+				font-size: 16px;
+				i {
+					padding: 0 5px;
+					color: map-get($theme-colors, "color_4");
+				}
+			}
+		}
+		.address-btn {
+			button {
+				@include dimension(null,100%);
+				padding: 20px;
+				font-size: 18px;
+				border: 2px solid map-get($theme-colors, "color_4");
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				svg {
+					margin-right: 5px;
+				}
+			}
+			.call-btn {
+				background: map-get($theme-colors, "color_4");
+				color:  map-get($theme-colors, "color_2");
+				margin: 10px 0 20px;
+			}
+			.w-btn {
+				background: map-get($theme-colors, "color_2");
+				color:  map-get($theme-colors, "color_4");
+			}
+		}
+	}
+}
+.realestate-price-d {
+	padding: 30px 100px;
+	.price-d {
+		background: map-get($theme-colors, "color_7");	
+		border-radius: 5px;
+		border: 1px solid map-get($theme-colors, "color_8");
+		padding: 30px;
+		.price-r {
+			font-size: 30px;
+			font-weight: 800;
+			display: flex;
+			align-items: center;
+			padding-bottom: 20px;
+			color:  map-get($theme-colors, "color_4");
+			border-bottom: 1px solid map-get($theme-colors, "color_8");
+			span {
+				font-size: 18px;
+				color:  map-get($theme-colors, "color_9");
+				padding-left: 10px;
+			}
+		}
+		.realestate-d-list {
+			.realestate-d-cnt {
+				position: relative;
+				margin: 30px 0 0;
+				.table {
+					margin-bottom: 0;
+					th,td {
+						border: none;
+						padding: 5px;
+						@include dimension(null,50%);
+					}
+					th {
+						color:  map-get($theme-colors, "color_9");
+						font-weight: normal;
+					}
+					td {
+						font-weight: 600;
+					}
+				}
+				.r-cnt-itm {
+					margin-bottom: 10px;
+					.r-cnt-itm-tlt {
+						color: map-get($theme-colors, "color_9");
+						font-size: 16px;
+					}
+					.r-cnt-itm-txt {
+						span {
+							display: inline-block;
+							padding: 3px 15px;
+							background:  map-get($theme-colors, "color_5");
+							border-radius: 5px;
+							color: map-get($theme-colors, "color_2");
+							margin: 5px 10px 0 0;
+							font-size: 14px;
+						}
+					}
+				}
+			}
+			.cnt-after {
+				&:after {
+					content:'';
+					position: absolute;
+					@include dimension(100%,1px);
+					@include directionPos(0,15px);
+					background: map-get($theme-colors, "color_8"); 
+				}
+			}
+		}
+	}
+	.details-des {
+		margin-top: 30px;
+		.details-des-tlt {
+			font-size: 20px;
+			padding: 0 0 20px;
+			font-weight: 600;
+		}
+		.details-des-txt {
+			font-size: 16px;
+			margin-bottom: 20px;
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.gallery-slider {
+	background:map-get($theme-colors, "color_2");
+	@include dimension(850px);
+	.z-btn {
+		position: absolute;
+		@include directionPos(0,14px);
+		z-index: 9;
+		font-size: 50px;
+		cursor: pointer;
+	}
+	.gallery-top {
+		@include dimension(80%,100%);
+	}
+	.gallery-thumbs {
+		height: 20%;
+		box-sizing: border-box;
+		background:map-get($theme-colors, "color_2");
+	}
+	.all-img-show {
+		position: absolute;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		@include dimension(100%,100%);
+		@include directionPos(0,0);
+		background: rgba(0,0,0,.6);
+		color: map-get($theme-colors, "color_2");
+		font-size: 25px;
+		font-weight: bold;
+		border-radius: 5px;
+		z-index: 9;
+		cursor: pointer;
+	}
+	.gallery-thumbs {
+		@include dimension(100%);
+		.swiper-slide {
+			@include dimension(100%);
+			opacity: 0.4;
+		}
+		.swiper-slide-thumb-active,.more-s-i {
+			opacity: 1;
+		}
+		.more-s-i {
+			.all-img-show {
+				display: flex;
+			}
+		}
+	}
+	.gallery-slider {
+		background:map-get($theme-colors, "color_2");
+	}
+	.gallery-nav {
+		@include dimension(null,calc(100% - 60px));
+		margin: auto;
+		padding: 30px 0;
+	}
+	.slider-img {
+		border-radius: 5px;
+		overflow: hidden;
+	}
+}
+.similar-post {
+	padding: 30px 85px 30px 100px;
+}
+@media screen and (min-width: 992px) {
+	.rea-ss-nav {
+		.search-service {
+			display: inherit;
+			.col-lg-3 {
+				-ms-flex: 0 0 20%;
+				flex: 0 0 20%;
+				@include dimensionMax(null,20%); 
+			}
+		}
+	}
+}
+@media (min-width: 992px) and (max-width: 1250px) {
+
+	.select-panel-section {
+		padding: 40px 50px;
+	}
+	.ss-section {
+		padding: 0px 35px 45px 50px;
+	}
+	.slider-section {
+		padding: 20px 50px 50px;
+
+		.swiper-button-next {
+			right: 21px;
+		}
+		.swiper-button-prev {
+			left: 21px;
+		}
+	}
+	.product-wrapper {
+		padding: 30px 50px;
+	}
+	.footer-section {
+		padding: 40px 50px 15px;
+	}
+	.realestate-map {
+		padding: 30px 35px 45px 50px;
+	}
+	.realestate-search {
+		padding: 30px 50px;
+	}
+	.category-form-section {
+		padding: 40px 50px;
+	}
+	.category-section {
+		padding: 40px 50px;
+	}
+
+	.realestate-price-d {
+		padding: 30px 50px;
+		.realestate-d-list {
+			.col-md-6 {
+				-ms-flex: 0 0 50%;
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+		}
+	}
+
+	.realestate-details {
+		padding: 50px;
+		.address-d {
+			padding: 20px 25px;
+		}
+	}
+	.header-section {
+		padding: 0px 50px;
+		.main-menu {
+			.navbar-brand {
+				margin: 10px 5px;
+				img {
+					@include dimension(null,140px); 
+				}
+			}
+			.navbar {
+				.navbar-collapse {
+					.navbar-nav {
+						.nav-link {
+							font-size: 14px;
+							margin-right: 10px;
+						}
+					}
+				}
+			}
+		}
+		.lg-ul {
+			padding-left: 10px;
+			.ctm-li {
+				.ctm-li-a {
+					padding: 6px 15px;
+					font-size: 14px;
+					margin-right: 7px;
+				}
+			}
+		} 
+		.pos-ul {
+			margin-left: 7px;
+		}
+	}
+
+	.user-profile-section  {
+		padding: 30px 50px;
+		.m-side-list {
+			.m-side-img {
+				@include dimension(null,17%);
+			}
+			.m-side-cnt {
+				@include dimension(null,53%);	
+			}
+			.usr-p-atr {
+				@include dimension(null,30%);
+			}
+		}
+	}
+	.search-service {
+		.item-list {
+			margin-right: 15px;
+			&:first-child {
+				margin-left: 0px;
+			}
+			.item-icon {
+			}
+		}
+	}
+
+	.rea-ss-nav {
+		.item-list-p {
+			.item-list {
+				.item-icon {
+					img {
+						@include dimension(35px,40px); 
+					}
+				}
+			}
+			.item-txt {
+				font-size: 16px;
+			}
+		}
+	}
+	.services {
+		.item-list {
+			padding: 20% 0;
+		}
+		.item-icon {
+			img {
+				@include dimension(null,50px); 
+			}
+		}
+		.item-txt {
+			font-size: 16px;
+		}
+	}
+
+	.similar-post {
+		padding: 30px 35px 30px 50px;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+	.realestate-map {
+		.map-sidebar {
+			.m-side-list {
+				display: inherit;
+				.m-side-img {
+					@include dimension(null,100%);  
+					margin-bottom: 15px;
+				}
+				.m-side-cnt {
+					@include dimension(null,100%);
+					padding-left: 0px;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 576px) and (max-width: 767px) {
+
+	.search-service {
+		.item-list {
+			margin-right: 15px;
+			&:first-child {
+				margin-left: 0px;
+			}
+			.item-icon {
+			}
+		}
+	}
+}
+@media screen and (max-width: 991px) {
+	.header-section {
+		padding: 0px;
+		.main-menu {
+			.navbar {
+				.navbar-collapse {
+					.navbar-nav {
+						.nav-link {
+							&:after {
+								@include directionPos(null,null,3px,10px);
+							}
+							&:hover {
+								&:after {
+									@include dimension(null, 97%);
+								}
+							}
+						}
+						.nav-link.active {
+							&:after {
+								@include dimension(null, 97%);
+							}
+						}
+					}
+				}
+			}	
+		}
+		.lg-ul {
+			padding-left: 0;
+			margin-bottom: 10px;
+		} 
+	}
+	.select-panel-section {
+		padding: 30px;
+		.plane-all {
+			.plane {
+				.plane-cr-price {
+					.cr-price {
+						font-size: 50px;
+					}
+				}
+			}
+		}
+
+		.adition-service {
+			.service-list {
+				.s-list {
+					padding: 15px 10px;
+					margin-bottom: 15px;
+					.col-12 {
+						padding: 0;
+					}
+					.ctm-select {
+						margin: 15px 10px;
+					}
+				}
+			}
+		}
+
+		.checkout {
+			.payment {
+				margin-top: 20px;
+			}
+		}
+	}
+	.ss-section {
+		padding: 0px 15px 45px 30px;
+	}
+	.country {
+		padding-left: 0px;
+	}
+	.slider-section {
+		padding: 20px 30px 50px 30px;
+
+		.swiper-button-next {
+			right: 21px;
+		}
+		.swiper-button-prev {
+			left: 21px;
+		}
+	}
+	.product-wrapper {
+		padding: 30px;
+	}
+	.footer-section {
+		padding: 40px 30px 15px;
+	}
+	.realestate-map {
+		padding: 30px 15px 45px 30px;
+	}
+	.category-form-section {
+		padding: 15px 30px;
+	}
+	.category-section {
+		padding: 40px 30px;
+	}
+	.realestate-details {
+		padding: 50px 30px;
+		.col-12 {
+			padding: 0;
+		}
+		.address-d {
+			margin-top: 30px;
+		}
+	}
+	.realestate-search { 
+		padding: 30px;
+		.map-sidebar {
+			padding-right: 0;
+
+			.m-side-list {
+				.m-side-img {
+					@include dimension(null,30%); 
+				}
+				.m-side-cnt {
+					@include dimension(null,70%);
+				}
+
+			}
+		} 
+	}
+	.rea-ss-nav {
+		.item-list-p {
+			.item-list {
+				.item-icon {
+				}
+			}
+
+			.item-txt {
+				padding: 8px 0 10px;
+				font-size: 16px;
+			}
+		}
+	}
+	.user-profile-section  {
+		padding: 30px;
+		.user-info {
+			margin-right: 0;
+			margin-bottom: 30px;
+		}
+		.m-side-list {
+			.m-side-img {
+				@include dimension(null,17%);
+			}
+			.m-side-cnt {
+				@include dimension(null,53%);	
+			}
+			.usr-p-atr {
+				@include dimension(null,30%);
+			}
+		}
+	}
+	.realestate-price-d {
+		padding: 30px;
+	}
+	.similar-post {
+		padding: 30px 15px 30px 30px;
+	}
+	.gallery-slider {
+		@include dimension(700px);
+	}
+}
+@media screen and (max-width: 767px) {
+	.section-tlt {
+		font-size: 16px;
+	}
+	.realestate-search { 
+		.map-sidebar {
+			padding-left: 0;
+			padding-top: 25px;
+		} 
+	}
+	.product-wrapper {
+		.home-slider {
+			.home-cnt {
+				font-size: 25px;
+			}
+		}
+	}
+	.rea-ss-nav {
+		.item-list-p {
+			.item-list {
+				.item-icon {
+				}
+			}
+
+			.item-txt {
+				padding: 8px 0 8px;
+				font-size: 13px;
+			}
+		}
+	}
+	.step-ul {
+		.step-li {
+			padding: 10px 25px;
+			margin-right: 50px;
+		}
+	}
+	.user-profile-section  {
+		.m-side-list {
+			.m-side-img {
+				@include dimension(null,17%);
+			}
+			.m-side-cnt {
+				.house-name {
+					font-size: 16px;
+				}	
+				.setting {
+					font-size: 13px;
+					span {
+						padding-right: 10px;
+					}
+				}	
+			}
+			.usr-p-atr {
+				font-size: 13px;
+			}
+		}
+	}
+	.select-panel-section {
+		padding: 30px;
+		.plane-all {
+			margin: 40px 0 0;
+			border: none;
+			.plane {
+				margin-bottom: 50px;
+				border: 1px solid  map-get($theme-colors, "color_8");
+			}
+			.plane.selected {
+				position: relative;
+				@include dimension(auto,100%);
+				@include directionPos(0); 
+			}
+		}
+		.adition-service {
+			.service-list {
+				.s-list {
+					.adition-price {
+						padding-top: 10px;
+					}
+				}
+			}
+		}
+	}
+	.search-service {
+		.item-list {
+			.item-icon {
+				img {
+					width: 20px;
+				}
+			}
+		}
+	}
+	.realestate-price-d {
+		.price-d {
+			.realestate-d-list {
+				.col-12 {
+					padding: 0;
+				}
+				.cnt-after {
+					&:after {
+						display:none;
+					}
+				}
+			}
+		}
+	}
+
+}
+@media screen and (max-width: 575px) {
+	.search {
+		margin-bottom: 20px;
+	}
+	.product-wrapper {
+		.home-slider {
+			.home-cnt {
+				font-size: 20px;
+				p {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	.user-profile-section  {
+		.m-side-list {
+			display: inherit;
+			.m-side-img {
+				@include dimension(null,100%);
+			}
+			.m-side-cnt {
+				@include dimension(null,100%);	
+				padding: 15px 0 0;
+				.setting {
+					padding: 10px 0;
+				}
+			}
+			.usr-p-atr {
+				@include dimension(null,100%);
+				padding-left: 0;
+				border-left: none;
+			}
+		}
+	}
+	.select-panel-section {
+		.checkout {
+			.order {
+				.order-list-all {
+					.order-list {
+						span {
+							display: block;
+						}
+						.order-price {
+							float: none;
+						}
+
+						&:last-child {
+							border-bottom: 1px solid  map-get($theme-colors, "color_8");
+						}
+					}
+				}
+				.total-price {
+					text-align: left;
+				}
+			}
+
+			.payment {
+				.payment-tlt {
+					font-size: 20px;
+					padding-bottom: 25px;
+				}
+				.payment-option {
+					.col-sm-6  {
+						padding: 0;
+					}
+					.pay-acc {
+						margin-bottom: 20px;
+						.pay-img {
+							img {
+								@include dimension(null,140px);
+							}
+						}
+					}
+
+				}
+
+			}
+		}
+	}
+	.realestate-map {
+		padding: 30px 30px 45px 30px;
+		.realestate-map-cnt  {
+			padding-left: 0px;
+			padding-bottom: 30px;
+			@include dimension(330px);
+		}
+		.col-12 {
+			padding: 0;
+		}
+	}
+	.rea-ss-nav {
+		.item-list-p {
+			.item-list {
+				.item-icon {
+				}
+			}
+
+			.item-txt {
+				padding: 8px 0 10px;
+				font-size: 9px;
+			}
+		}
+	}
+	.extra-info1 {
+		margin-bottom: 20px;
+		textarea {
+			@include dimension(220px);
+		}
+		.des-tips {
+			@include dimension(220px,90%);
+			padding: 5%;
+			z-index: 9;
+		}
+	}
+	.arrow-right {
+		display: none;
+	}
+	.realestate-search {
+		.map-sidebar {
+			.m-side-list {
+				display: inherit;
+				.m-side-img {
+					@include dimension(null,100%);  
+					margin-bottom: 15px;
+				}
+				.m-side-cnt {
+					@include dimension(null,100%);
+					padding-left: 0px;
+				}
+			}
+		}
+	}
+	.sub-cat-tab {
+		margin-top: 30px;
+	}
+
+	.plane-modal {
+		.modal-body {
+			.suc-div {
+				&:after {
+					@include directionPos(inherit,inherit,-38px);
+					border-right: 20px solid transparent;
+					border-left: 20px solid transparent;
+					border-top: 20px solid map-get($theme-colors, "color_4");
+				}
+			}
+		}
+	}
+	.category-section {
+		.car-tab-cnt {
+			padding-left: 0;
+		}
+	}
+	.search {
+		.col-sm-6 {
+			padding: 0;
+		}
+	}
+	.search-service {
+		.item-list {
+			margin-right: 15px;
+			&:first-child {
+				margin-left:0;
+			}
+			&:last-child {
+				margin-right:0;
+			}
+		}
+	}
+	.realestate-details {
+		.address-d {
+			padding: 20px 25px;
+			.phn-num {
+				font-size: 25px;
+			}
+			.address-txt-a {
+				font-size: 16px;
+				.address-tlt {
+					font-size: 14px;
+				}
+			}
+			.address-btn {
+				button {
+					padding: 10px;
+					font-size: 16px;
+				}
+			}
+		}
+	}
+	.gallery-slider {
+		@include dimension(500px);
+		.z-btn {
+			font-size: 40px;
+		}
+		.gallery-top {
+			@include dimension(70%);
+		}
+		.gallery-nav {
+			@include dimension(30%,calc(100% - 30px));
+			padding: 15px 0;
+		}
+	}
+	.realestate-price-d {
+		.details-des {
+			.col-12 {
+				padding: 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.step-ul {
+		.step-li {
+			padding: 10px 23px;
+			margin-right: 25px;
+			font-size: 18px;
+		}
+	}
+	.realestate-price-d {
+		.price-d {
+			padding: 15px;
+			.price-r {
+				font-size: 25px;
+			}
+		}
+	}
+}
+@media screen and (max-width: 400px) {
+	.step-ul {
+		.step-li {
+			padding: 3px 16px;
+			margin-right: 20px;
+			font-size: 18px;
+		}
+	}
+	.search-service {
+		.item-list {
+			margin-right: 15px;
+			&:first-child {
+				margin-left: 0px;
+			}
+			.item-icon {
+
+			}
+		}
+	}
+
+	.rea-ss-nav {
+		.item-list-p {
+			.item-list {
+				.item-icon {
+					img {
+						@include dimension(30px,35px);  
+					}
+				}
+			}
+		}
+	}
+	.realestate-map {
+		.map-sidebar {
+			.m-side-list {
+				display: inherit;
+				.m-side-img {
+					@include dimension(null,100%);  
+					margin-bottom: 15px;
+				}
+				.m-side-cnt {
+					@include dimension(null,100%);
+					padding-left: 0px;
+				}
+			}
+		}
+	}
+
+	.services {
+		.item-list {
+			padding: 20% 0;
+		}
+		.item-icon {
+			img {
+				@include dimension(null,50px); 
+			}
+		}
+		.item-txt {
+			font-size: 16px;
+		}
+	}
+	.gallery-slider {
+		@include dimension(400px);
+	}
+}

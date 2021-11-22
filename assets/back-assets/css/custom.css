@@ -1,0 +1,74 @@
+#category_view tbody tr img{
+	height: 50px;
+}
+#category_view tbody tr td{
+	vertical-align: middle;
+	padding-left: 15px;
+}
+
+#category_view tbody tr td:nth-child(3),
+#category_view tbody tr td:last-child{
+	text-align: center;
+}
+.odd td,
+.even td{
+	vertical-align: middle;
+}
+
+/*validation message */
+
+.reqPop::before {
+	content: '';
+	border-bottom: 10px solid white;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	position: absolute;
+	top: -9px;
+	left: 9px;
+	z-index: 1;
+}
+
+.reqPop::after {
+	content: '';
+	border-bottom: 10px solid black;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	position: absolute;
+	top: -10px;
+	left: 9px;
+}
+.reqPop {
+	display: none;
+	width: 300px;
+	height: 42px;
+	border: 1px solid #757373e6;
+	border-radius: 6px;
+	box-shadow: 4px 4px 1px #dedede;
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: -52px;
+	margin: auto;
+	z-index: 11;
+	background: white;
+}
+.reqPop .bg-warning {
+	background-color: orange !important;
+	width: 25px;
+	text-align: center;
+	color: white;
+	padding: 1px;
+	margin: 7px 0 0 7px;
+	border-radius: 2px;
+}
+.reqPop .text {
+	position: absolute;
+	top: 10px;
+	left: 47px;
+	font-size: 14px;
+}
+.form-for-validation .form-group{
+	position: relative;
+}
+
+/*validation message */
